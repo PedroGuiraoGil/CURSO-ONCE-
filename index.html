@@ -351,6 +351,38 @@
             border-radius: 10px;
             backdrop-filter: blur(5px);
         }
+        
+        .practice-list ol {
+            list-style: none;
+            padding-left: 0;
+            counter-reset: practice-counter;
+        }
+
+        .practice-list li {
+            counter-increment: practice-counter;
+            margin-bottom: 20px;
+            padding-left: 45px;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .practice-list li::before {
+            content: counter(practice-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            color: var(--color-bg-dark);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
 
         /* --- PRÁCTICAS --- */
         .practice-box {
@@ -649,61 +681,12 @@
         footer {
             background: var(--color-bg-dark);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 60px 0 40px 0;
+            padding: 40px 0;
             margin-top: 100px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-section h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--color-primary);
-        }
-
-        .footer-section p,
-        .footer-section li {
-            color: var(--color-text-dim);
-            margin-bottom: 10px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: var(--gradient-secondary);
-            color: var(--color-bg-dark);
-            transform: translateY(-3px);
         }
 
         .footer-bottom {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--color-text-dim);
         }
 
@@ -2333,6 +2316,45 @@ Generar en:
                         </div>
                     </div>
                 </details>
+                
+                <!-- MÓDULO 5: DESAFÍOS PRÁCTICOS -->
+                <details class="module-card">
+                    <summary class="module-header">
+                        <span class="module-number">05</span>
+                        <h3>Desafíos Prácticos: Tu Portfolio de IA</h3>
+                        <p class="module-subtitle">Es hora de demostrar lo que has aprendido. Completa estos desafíos para construir un portfolio que demuestre tu dominio sobre la creación y estrategia con IA.</p>
+                        <span class="module-icon"></span>
+                    </summary>
+                    
+                    <div class="module-content">
+                        <h4>20 Desafíos para el Creador IA Moderno</h4>
+                        <div class="practice-list content-block">
+                           <ol>
+                                <li><strong>Nivel 1: El Resumidor Experto.</strong> Toma un artículo de 3000 palabras y crea un resumen de 150 palabras, una lista de 5 puntos clave y 3 preguntas que el artículo no responde.</li>
+                                <li><strong>Nivel 2: El Escritor de Emails Fantasma.</strong> Redacta tres versiones de un email para pedir un aumento de sueldo: una formal, una asertiva y una colaborativa.</li>
+                                <li><strong>Nivel 3: La Máquina de Ideas.</strong> Genera 20 ideas para un nuevo sabor de helado, categorízalas y elige las 3 más prometedoras con una breve justificación.</li>
+                                <li><strong>Nivel 4: El Traductor Cultural.</strong> Traduce un refrán popular de tu idioma al inglés y luego pide a la IA que explique el matiz cultural que se pierde en la traducción literal.</li>
+                                <li><strong>Nivel 5: El Community Manager Instantáneo.</strong> Crea 5 posts para Instagram sobre un hobby que te apasione, incluyendo sugerencias de imágenes y hashtags.</li>
+                                <li><strong>Nivel 6: El Director de Branding.</strong> Desarrolla un nombre, un eslogan y una descripción de la misión para una cafetería ficticia con temática espacial.</li>
+                                <li><strong>Nivel 7: El Cuentacuentos Visual.</strong> Escribe una historia infantil de 300 palabras y genera 3 ilustraciones clave que acompañen la narración.</li>
+                                <li><strong>Nivel 8: El Diseñador de Presentaciones.</strong> Crea el guion y la estructura de una presentación de 10 diapositivas para vender un coche volador a inversores.</li>
+                                <li><strong>Nivel 9: El Animador de Logos.</strong> Diseña un logo simple para una marca personal y luego crea un prompt para animarlo como un GIF de 5 segundos.</li>
+                                <li><strong>Nivel 10: El Productor de Podcasts.</strong> Genera un guion para una introducción de podcast de 30 segundos, crea la música de fondo y narra el guion con una voz de IA.</li>
+                                <li><strong>Nivel 11: El Estratega de Contenidos.</strong> Diseña un calendario de contenidos de una semana para una marca de ropa sostenible, incluyendo temas para blog, redes sociales y un video corto.</li>
+                                <li><strong>Nivel 12: El Creador de Tutoriales.</strong> Crea un guion detallado para un video tutorial de 2 minutos sobre "cómo hacer el café perfecto", genera las imágenes de los pasos y una voz en off.</li>
+                                <li><strong>Nivel 13: El Diseñador de Personajes.</strong> Crea una hoja de personaje completa para un videojuego de fantasía, incluyendo su historia, habilidades, y 4 vistas del personaje (frontal, trasera, lateral).</li>
+                                <li><strong>Nivel 14: El Arquitecto de Automatización.</strong> Diseña un flujo de trabajo en Zapier o Make que, cuando recibas un email con la palabra "factura", extraiga los datos y los añada a una hoja de cálculo de Google.</li>
+                                <li><strong>Nivel 15: El Compositor de Bandas Sonoras.</strong> Genera una canción completa de 2 minutos que podría ser la banda sonora de una escena de persecución en una película de ciencia ficción.</li>
+                                <li><strong>Nivel 16: El Director de Arte Cinematográfico.</strong> Crea un "mood board" visual con 10 imágenes que definan la estética de una película de terror gótico ambientada en el Amazonas.</li>
+                                <li><strong>Nivel 17: El Creador de Cursos Express.</strong> Desarrolla el temario y el contenido del primer módulo de un mini-curso online sobre "Introducción a la jardinería para apartamentos".</li>
+                                <li><strong>Nivel 18: El Autor Interactivo.</strong> Escribe el primer capítulo de un ebook y genera 3 ilustraciones, un resumen en audio y un breve video animado que lo complemente.</li>
+                                <li><strong>Nivel 19: El Ingeniero de Mentores IA.</strong> Crea un "Custom GPT" o un prompt de sistema avanzado que actúe como un coach de negociación, capaz de simular escenarios y dar feedback.</li>
+                                <li><strong>Nivel 20: El Arquitecto Web.</strong> Diseña y redacta todo el contenido para una página web de una sola página (landing page) para un producto ficticio, incluyendo la estructura, los textos, y los prompts para generar todas las imágenes necesarias.</li>
+                           </ol>
+                        </div>
+                    </div>
+                </details>
+
             </div>
         </section>
 
@@ -2539,34 +2561,6 @@ Generar en:
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Sobre el Curso</h4>
-                <p>IA Práctica es más que un curso, es tu entrada al futuro de la creación digital. Diseñado para profesionales que quieren resultados, no teoría.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">📧</a>
-                    <a href="#" class="social-link">💼</a>
-                    <a href="#" class="social-link">🐦</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Recursos Rápidos</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#tool-index" style="color: var(--color-text-dim); text-decoration: none;">→ Índice de Herramientas</a></li>
-                    <li><a href="#" style="color: var(--color-text-dim); text-decoration: none;">→ Comunidad Discord</a></li>
-                    <li><a href="#" style="color: var(--color-text-dim); text-decoration: none;">→ Actualizaciones</a></li>
-                    <li><a href="#" style="color: var(--color-text-dim); text-decoration: none;">→ Certificación</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Próximas Ediciones</h4>
-                <p>¿Listo para unirte? Las plazas son limitadas para mantener la calidad.</p>
-                <p style="margin-top: 15px;">
-                    <strong style="color: var(--color-primary);">Próxima edición:</strong><br>
-                    Febrero 2025
-                </p>
-            </div>
-        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 IA Práctica: De Cero a Creador | Creado con 💜 y mucha IA</p>
         </div>
