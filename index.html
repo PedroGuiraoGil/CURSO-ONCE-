@@ -16,7 +16,8 @@
             --color-success: #00ff88;
             --color-danger: #ff0055;
             --color-text: #e0e6ff;
-            --color-text-dim: #a5afd7;
+            /* Increased brightness for better contrast */
+            --color-text-dim: #d1d9f0;
             --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-secondary: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
             --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -208,13 +209,117 @@
         }
 
         .module-card {
-            background: linear-gradient(135deg, rgba(31, 38, 81, 0.8) 0%, rgba(21, 26, 58, 0.8) 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
             position: relative;
         }
+        
+        /* Module 0: NEW High Contrast White */
+        .modules-grid .module-card:nth-of-type(1) {
+            background-color: #ffffff;
+        }
+        .modules-grid .module-card:nth-of-type(1) .module-header h3,
+        .modules-grid .module-card:nth-of-type(1) .module-subtitle {
+            color: #1e3a8a; /* Dark Blue */
+        }
+        .modules-grid .module-card:nth-of-type(1) .module-icon::before,
+        .modules-grid .module-card:nth-of-type(1) .module-icon::after {
+            background: #1e3a8a;
+        }
+        .modules-grid .module-card:nth-of-type(1) .module-number {
+            color: #1e3a8a;
+            opacity: 0.05;
+        }
+
+        /* Module 1: Dark Blue */
+        .modules-grid .module-card:nth-of-type(2) {
+            background-color: #1f2651;
+        }
+        .modules-grid .module-card:nth-of-type(2) .module-header h3,
+        .modules-grid .module-card:nth-of-type(2) .module-subtitle {
+            color: var(--color-text);
+        }
+
+        /* Module 2: Medium Purple */
+        .modules-grid .module-card:nth-of-type(3) {
+            background-color: #4338ca;
+        }
+        .modules-grid .module-card:nth-of-type(3) .module-header h3,
+        .modules-grid .module-card:nth-of-type(3) .module-subtitle {
+            color: var(--color-text);
+        }
+
+        /* Module 3: Light Yellow/Green */
+        .modules-grid .module-card:nth-of-type(4) {
+            background-color: #f5fbb6;
+        }
+        .modules-grid .module-card:nth-of-type(4) .module-header h3,
+        .modules-grid .module-card:nth-of-type(4) .module-subtitle {
+            color: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(4) .module-icon::before,
+        .modules-grid .module-card:nth-of-type(4) .module-icon::after {
+            background: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(4) .module-number {
+            color: var(--color-bg-dark);
+            opacity: 0.15;
+        }
+
+        /* Module 4: Dark Teal */
+        .modules-grid .module-card:nth-of-type(5) {
+            background-color: #0d9488;
+        }
+        .modules-grid .module-card:nth-of-type(5) .module-header h3,
+        .modules-grid .module-card:nth-of-type(5) .module-subtitle {
+            color: var(--color-text);
+        }
+
+        /* Module 5: Light Pink */
+        .modules-grid .module-card:nth-of-type(6) {
+            background-color: #fbcfe8;
+        }
+        .modules-grid .module-card:nth-of-type(6) .module-header h3,
+        .modules-grid .module-card:nth-of-type(6) .module-subtitle {
+            color: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(6) .module-icon::before,
+        .modules-grid .module-card:nth-of-type(6) .module-icon::after {
+            background: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(6) .module-number {
+            color: var(--color-bg-dark);
+            opacity: 0.15;
+        }
+
+        /* Module 6: Dark Red */
+        .modules-grid .module-card:nth-of-type(7) {
+            background-color: #be123c;
+        }
+        .modules-grid .module-card:nth-of-type(7) .module-header h3,
+        .modules-grid .module-card:nth-of-type(7) .module-subtitle {
+            color: var(--color-text);
+        }
+
+        /* Module 7: Light Blue */
+        .modules-grid .module-card:nth-of-type(8) {
+            background-color: #bae6fd;
+        }
+        .modules-grid .module-card:nth-of-type(8) .module-header h3,
+        .modules-grid .module-card:nth-of-type(8) .module-subtitle {
+            color: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(8) .module-icon::before,
+        .modules-grid .module-card:nth-of-type(8) .module-icon::after {
+            background: var(--color-bg-dark);
+        }
+        .modules-grid .module-card:nth-of-type(8) .module-number {
+            color: var(--color-bg-dark);
+            opacity: 0.15;
+        }
+
 
         .module-card::before {
             content: '';
@@ -243,7 +348,7 @@
         }
 
         .module-header:hover {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 0, 0, 0.03);
         }
 
         .module-number {
@@ -260,12 +365,12 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 10px;
-            color: #ffffff;
+            /* color is set per module now */
             padding-right: 80px;
         }
 
         .module-subtitle {
-            color: var(--color-text-dim);
+            /* color is set per module now */
             font-size: 1.1rem;
             line-height: 1.6;
             padding-right: 80px;
@@ -350,6 +455,52 @@
             margin: 20px 0;
             border-radius: 10px;
             backdrop-filter: blur(5px);
+        }
+
+        /* --- HIGH CONTRAST RULES FOR LIGHT MODULES --- */
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .module-content {
+            color: #1c1917; /* Dark Gray/Brown */
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) h4 {
+            color: #1e40af; /* Dark Blue */
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) h4::before {
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) h5 {
+            color: #18181b; /* Darker Gray */
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) a {
+            color: #1e40af; /* Dark Blue */
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) li::before {
+            color: #1e40af;
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .content-block,
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .practice-box,
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .code-block {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .content-block {
+            border-left-color: #1e40af;
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .practice-box h4 {
+            color: #581c87; /* Darker Violet */
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) code {
+            background: rgba(0, 0, 0, 0.1);
+            color: #1e3a8a; /* Darker Blue */
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .code-block {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+        .modules-grid .module-card:is(:nth-of-type(1), :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)) .copy-btn {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: #1e3a8a;
         }
         
         /* --- ESTILOS PARA LA LISTA DE DESAFÍOS --- */
@@ -460,7 +611,7 @@
         /* --- CÓDIGO Y BOTÓN COPIAR --- */
         code {
             background: rgba(0, 212, 255, 0.1);
-            color: var(--color-primary);
+            color: #80eaff; /* Brighter for contrast */
             padding: 4px 8px;
             border-radius: 6px;
             font-family: 'Fira Code', 'Consolas', monospace;
@@ -802,15 +953,15 @@
             
             <div class="hero-stats">
                 <div class="stat-card">
-                    <div class="stat-number">7</div>
+                    <div class="stat-number">8</div>
                     <div class="stat-label">Módulos Intensivos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">40+</div>
+                    <div class="stat-number">50+</div>
                     <div class="stat-label">Prácticas Hands-On</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">45+</div>
+                    <div class="stat-number">60+</div>
                     <div class="stat-label">Herramientas IA</div>
                 </div>
             </div>
@@ -829,6 +980,95 @@
             </div>
 
             <div class="modules-grid">
+                <!-- MÓDULO 0: UPDATED MODULE -->
+                <details class="module-card">
+                    <summary class="module-header">
+                        <span class="module-number">00</span>
+                        <h3>Manual de Accesibilidad en Windows</h3>
+                        <p class="module-subtitle">Una guía fácil de seguir para personas con discapacidad visual o que necesiten ayudas de accesibilidad.</p>
+                        <span class="module-icon"></span>
+                    </summary>
+                    <div class="module-content">
+                        <h4>1. Cómo acceder a la Configuración de Accesibilidad</h4>
+                        <div class="content-block">
+                            <p>Presiona <strong>Windows + U</strong> para abrir directamente la Configuración de Accesibilidad.</p>
+                        </div>
+
+                        <h4>2. Lupa</h4>
+                        <div class="content-block">
+                            <h5>Cómo activar/desactivar la Lupa</h5>
+                            <ul>
+                                <li><strong>Activar:</strong> Presiona <strong>Windows + +</strong> (tecla más)</li>
+                                <li><strong>Desactivar:</strong> Presiona <strong>Windows + Esc</strong></li>
+                            </ul>
+                            <h5>Modos de visualización de la Lupa</h5>
+                             <p>Presiona <strong>Ctrl + Alt + M</strong> para cambiar entre los modos:</p>
+                            <ul>
+                                <li><strong>Lente:</strong> Una ventana pequeña que sigue el cursor.</li>
+                                <li><strong>Pantalla completa:</strong> Amplía toda la pantalla.</li>
+                                <li><strong>Acoplado:</strong> Una sección fija muestra la ampliación.</li>
+                            </ul>
+                        </div>
+
+                        <h4>3. Puntero del mouse</h4>
+                        <div class="content-block">
+                             <h5>Cómo cambiar tamaño y color del puntero</h5>
+                             <p>Abre Configuración con <strong>Windows + U</strong>, luego ve a <strong>Cursor y puntero</strong> para ajustar el tamaño y color.</p>
+                        </div>
+                        
+                        <h4>4. Narrador (lector de pantalla integrado)</h4>
+                        <div class="content-block">
+                             <h5>Activar/Desactivar Narrador</h5>
+                             <p><strong>Atajo:</strong> <strong>Ctrl + Windows + Enter</strong></p>
+                             <h5>Atajos importantes:</h5>
+                             <ul>
+                                 <li><strong>Ctrl:</strong> Pausar/continuar lectura.</li>
+                                 <li><strong>Caps Lock + M:</strong> Modo de navegación.</li>
+                                 <li><strong>Caps Lock + H:</strong> Saltar a siguiente encabezado.</li>
+                             </ul>
+                        </div>
+                        
+                        <h4>5. Otras opciones de accesibilidad útiles</h4>
+                        <div class="content-block">
+                            <ul>
+                                <li><strong>Texto en negrita:</strong> Ve a <strong>Windows + U > Texto en pantalla</strong>.</li>
+                                <li><strong>Alto contraste:</strong> Actívalo con <strong>Alt + Shift + Impr Pant</strong>.</li>
+                                <li><strong>Teclado en pantalla:</strong> Actívalo con <strong>Windows + Ctrl + O</strong>.</li>
+                                <li><strong>Subtítulos en directo:</strong> Actívalo con <strong>Windows + Ctrl + L</strong>.</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>6. Resumen de Atajos Principales</h4>
+                        <div class="content-block">
+                             <table style="width: 100%; border-collapse: collapse;">
+                                 <thead>
+                                     <tr style="border-bottom: 1px solid;">
+                                         <th style="padding: 8px; text-align: left;">Función</th>
+                                         <th style="padding: 8px; text-align: left;">Atajo</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr><td style="padding: 8px;">Configuración accesibilidad</td><td style="padding: 8px;"><strong>Windows + U</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Activar lupa</td><td style="padding: 8px;"><strong>Windows + +</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Desactivar lupa</td><td style="padding: 8px;"><strong>Windows + Esc</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Cambiar modo lupa</td><td style="padding: 8px;"><strong>Ctrl + Alt + M</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Activar/Desactivar Narrador</td><td style="padding: 8px;"><strong>Ctrl + Windows + Enter</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Activar teclado en pantalla</td><td style="padding: 8px;"><strong>Windows + Ctrl + O</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Activar alto contraste</td><td style="padding: 8px;"><strong>Alt + Shift + Impr Pant</strong></td></tr>
+                                     <tr><td style="padding: 8px;">Activar subtítulos en directo</td><td style="padding: 8px;"><strong>Windows + Ctrl + L</strong></td></tr>
+                                 </tbody>
+                             </table>
+                        </div>
+                        <h4>7. Recursos Adicionales en Video</h4>
+                        <div class="content-block">
+                            <ul>
+                                <li><a href="https://www.youtube.com/watch?v=-qNV05-PYaU&t=456s" target="_blank">Tutorial de Accesibilidad en Windows 11</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=4Cclgbtgfj4" target="_blank">Novedades de Accesibilidad en Windows</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
                 <!-- MÓDULO 1 EXPANDIDO -->
                 <details class="module-card" open>
                     <summary class="module-header">
@@ -2015,7 +2255,7 @@ y parecer completamente real. ¿Aterrador? Quizás.
                                 <button class="copy-btn">Copiar</button>
                                 <code>Crea un jingle de 30 segundos para mi marca personal.
 Mi profesión: [tu profesión]
-Mis valores: [3 valores]
+Mi valores: [3 valores]
 Mi personalidad: [3 adjetivos]
 
 Necesito:
@@ -2347,36 +2587,41 @@ Generar en:
                 <details class="module-card">
                     <summary class="module-header">
                         <span class="module-number">05</span>
-                        <h3>Desafíos Prácticos: Tu Portfolio de IA</h3>
-                        <p class="module-subtitle">Es hora de demostrar lo que has aprendido. Completa estos desafíos para construir un portfolio que demuestre tu dominio sobre la creación y estrategia con IA.</p>
+                        <h3>Guía de Accesibilidad y Automatización</h3>
+                        <p class="module-subtitle">Domina herramientas que potencian la accesibilidad y automatizan tareas para una productividad sin límites.</p>
                         <span class="module-icon"></span>
                     </summary>
-                    
                     <div class="module-content">
-                        <h4>20 Desafíos para el Creador IA Moderno</h4>
-                        <div class="practice-list content-block">
-                           <ol>
-                                <li><strong>Nivel 1: El Resumidor Experto.</strong> Toma un artículo de 3000 palabras y crea un resumen de 150 palabras, una lista de 5 puntos clave y 3 preguntas que el artículo no responde.</li>
-                                <li><strong>Nivel 2: El Escritor de Emails Fantasma.</strong> Redacta tres versiones de un email para pedir un aumento de sueldo: una formal, una asertiva y una colaborativa.</li>
-                                <li><strong>Nivel 3: La Máquina de Ideas.</strong> Genera 20 ideas para un nuevo sabor de helado, categorízalas y elige las 3 más prometedoras con una breve justificación.</li>
-                                <li><strong>Nivel 4: El Traductor Cultural.</strong> Traduce un refrán popular de tu idioma al inglés y luego pide a la IA que explique el matiz cultural que se pierde en la traducción literal.</li>
-                                <li><strong>Nivel 5: El Community Manager Instantáneo.</strong> Crea 5 posts para Instagram sobre un hobby que te apasione, incluyendo sugerencias de imágenes y hashtags.</li>
-                                <li><strong>Nivel 6: El Director de Branding.</strong> Desarrolla un nombre, un eslogan y una descripción de la misión para una cafetería ficticia con temática espacial.</li>
-                                <li><strong>Nivel 7: El Cuentacuentos Visual.</strong> Escribe una historia infantil de 300 palabras y genera 3 ilustraciones clave que acompañen la narración.</li>
-                                <li><strong>Nivel 8: El Diseñador de Presentaciones.</strong> Crea el guion y la estructura de una presentación de 10 diapositivas para vender un coche volador a inversores.</li>
-                                <li><strong>Nivel 9: El Animador de Logos.</strong> Diseña un logo simple para una marca personal y luego crea un prompt para animarlo como un GIF de 5 segundos.</li>
-                                <li><strong>Nivel 10: El Productor de Podcasts.</strong> Genera un guion para una introducción de podcast de 30 segundos, crea la música de fondo y narra el guion con una voz de IA.</li>
-                                <li><strong>Nivel 11: El Estratega de Contenidos.</strong> Diseña un calendario de contenidos de una semana para una marca de ropa sostenible, incluyendo temas para blog, redes sociales y un video corto.</li>
-                                <li><strong>Nivel 12: El Creador de Tutoriales.</strong> Crea un guion detallado para un video tutorial de 2 minutos sobre "cómo hacer el café perfecto", genera las imágenes de los pasos y una voz en off.</li>
-                                <li><strong>Nivel 13: El Diseñador de Personajes.</strong> Crea una hoja de personaje completa para un videojuego de fantasía, incluyendo su historia, habilidades, y 4 vistas del personaje (frontal, trasera, lateral).</li>
-                                <li><strong>Nivel 14: El Arquitecto de Automatización.</strong> Diseña un flujo de trabajo en Zapier o Make que, cuando recibas un email con la palabra "factura", extraiga los datos y los añada a una hoja de cálculo de Google.</li>
-                                <li><strong>Nivel 15: El Compositor de Bandas Sonoras.</strong> Genera una canción completa de 2 minutos que podría ser la banda sonora de una escena de persecución en una película de ciencia ficción.</li>
-                                <li><strong>Nivel 16: El Director de Arte Cinematográfico.</strong> Crea un "mood board" visual con 10 imágenes que definan la estética de una película de terror gótico ambientada en el Amazonas.</li>
-                                <li><strong>Nivel 17: El Creador de Cursos Express.</strong> Desarrolla el temario y el contenido del primer módulo de un mini-curso online sobre "Introducción a la jardinería para apartamentos".</li>
-                                <li><strong>Nivel 18: El Autor Interactivo.</strong> Escribe el primer capítulo de un ebook y genera 3 ilustraciones, un resumen en audio y un breve video animado que lo complemente.</li>
-                                <li><strong>Nivel 19: El Ingeniero de Mentores IA.</strong> Crea un "Custom GPT" o un prompt de sistema avanzado que actúe como un coach de negociación, capaz de simular escenarios y dar feedback.</li>
-                                <li><strong>Nivel 20: El Arquitecto Web.</strong> Diseña y redacta todo el contenido para una página web de una sola página (landing page) para un producto ficticio, incluyendo la estructura, los textos, y los prompts para generar todas las imágenes necesarias.</li>
-                           </ol>
+                        <h4>Herramientas Auditivas y Cognitivas</h4>
+                        <div class="content-block">
+                            <h5>Subtítulos en Vivo y Modo Concentración</h5>
+                             <p>Windows incluye herramientas potentes para mejorar la accesibilidad auditiva y la concentración.</p>
+                             <ul>
+                                 <li><strong>Subtítulos en vivo (`Win+Ctrl+L`):</strong> Transcribe en tiempo real cualquier audio que se reproduzca en tu PC.</li>
+                                 <li><strong>Modo Concentración:</strong> Bloquea notificaciones y distracciones para ayudarte a mantener el enfoque.</li>
+                                 <li><strong>Lector Inmersivo (Edge/Office):</strong> Mejora la legibilidad y comprensión de textos con herramientas como enfoque de línea y resaltado gramatical.</li>
+                             </ul>
+                        </div>
+                        <h4>Navegación Web Accesible</h4>
+                        <div class="content-block">
+                            <h5>Extensiones de Navegador Esenciales</h5>
+                            <p>Mejora tu experiencia de navegación con estas extensiones diseñadas para la accesibilidad.</p>
+                            <ul>
+                                <li><strong>Read Aloud:</strong> Lee el contenido de las páginas web con voces de alta calidad.</li>
+                                <li><strong>Dark Reader:</strong> Aplica un modo oscuro universal a cualquier sitio web para reducir la fatiga visual.</li>
+                                <li><strong>Helperbird:</strong> Una suite completa con fuentes para dislexia, reglas de lectura, máscaras de enfoque y mucho más.</li>
+                            </ul>
+                        </div>
+                        <h4>Herramientas Multifuncionales: Microsoft PowerToys</h4>
+                        <div class="content-block">
+                            <h5>Una Suite Completa para la Accesibilidad</h5>
+                             <p>PowerToys es una colección de utilidades de Microsoft que incluye varias herramientas clave para la accesibilidad:</p>
+                             <ul>
+                                 <li><strong>PowerToys Run (`Alt+Espacio`):</strong> Un lanzador universal para buscar aplicaciones, archivos y realizar acciones rápidas.</li>
+                                 <li><strong>Color Picker (`Win+Shift+C`):</strong> Identifica cualquier color en la pantalla, accesible con lectores de pantalla.</li>
+                                 <li><strong>Text Extractor (`Win+Shift+T`):</strong> Copia texto de cualquier imagen o video en tu pantalla.</li>
+                                 <li><strong>Mouse Utilities:</strong> Incluye funciones para encontrar el cursor fácilmente, resaltar los clicks y mostrar una cruz sobre el puntero.</li>
+                             </ul>
                         </div>
                     </div>
                 </details>
