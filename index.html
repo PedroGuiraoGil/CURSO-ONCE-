@@ -126,7 +126,7 @@
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 20px; /* Reduced gap for 4 cards */
             margin-top: 60px;
             flex-wrap: wrap;
         }
@@ -138,6 +138,11 @@
             padding: 25px 35px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            min-width: 200px; /* Added min-width */
+        }
+        
+        .stat-card.clickable {
+            cursor: pointer;
         }
 
         .stat-card:hover {
@@ -954,15 +959,19 @@
             <div class="hero-stats">
                 <div class="stat-card">
                     <div class="stat-number">8</div>
-                    <div class="stat-label">Módulos Intensivos</div>
+                    <div class="stat-label">Módulos</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Prácticas Hands-On</div>
+                    <div class="stat-label">Prácticas</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">60+</div>
+                <div class="stat-card clickable" id="tools-stat-card">
+                    <div class="stat-number">70+</div>
                     <div class="stat-label">Herramientas IA</div>
+                </div>
+                <div class="stat-card clickable" id="videos-stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Videos</div>
                 </div>
             </div>
         </div>
@@ -981,11 +990,11 @@
 
             <div class="modules-grid">
                 <!-- MÓDULO 0: UPDATED MODULE -->
-                <details class="module-card">
+                <details class="module-card" open>
                     <summary class="module-header">
                         <span class="module-number">00</span>
-                        <h3>Manual de Accesibilidad en Windows</h3>
-                        <p class="module-subtitle">Una guía fácil de seguir para personas con discapacidad visual o que necesiten ayudas de accesibilidad.</p>
+                        <h3>Manual de Accesibilidad y Recursos Iniciales</h3>
+                        <p class="module-subtitle">Una guía de alto contraste para personas con discapacidad visual y los recursos clave para empezar.</p>
                         <span class="module-icon"></span>
                     </summary>
                     <div class="module-content">
@@ -1059,14 +1068,22 @@
                                  </tbody>
                              </table>
                         </div>
-                        <h4>7. Recursos Adicionales en Video</h4>
-                        <div class="content-block">
-                            <ul>
-                                <li><a href="https://www.youtube.com/watch?v=-qNV05-PYaU&t=456s" target="_blank">EL CASCARÓN DE NUEZ  video del 11/8/2025</a></li>
-                                <li><a href="https://www.youtube.com/watch?v=4Cclgbtgfj4" target="_blank">EL CASCARÓN DE NUEZ  Implantes que permiten la movilidad Junio 2025</a></li>
-                               <li><a href="https://www.youtube.com/watch?v=rNgnsnJx5Pc" target="_blank">NOTICIAS IA 12/8/2025</a></li>
-                            </ul>
+                        
+                        <!-- SECCIÓN DE VIDEOS RESTAURADA -->
+                        <div id="videos-list-section">
+                            <h4>Recursos Adicionales en Video</h4>
+                            <div class="content-block">
+                                <ul>
+                                    <li><a href="https://www.youtube.com/playlist?list=UU71sOOBgRu5UL-opaFVFstw" target="_blank">EL CASCARÓN DE NUEZ - Últimos Vídeos</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=DzDuEU4NzRo" target="_blank">NOTICIAS IA - 10 Noticias que no te puedes perder</a></li>
+                                    <li><a href="https://www.youtube.com/@imperatorclub/videos" target="_blank">IMPERATOR CLUB - Nuevas IAs GRATIS para Crear Contenido</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=YCAOHvZU5GI" target="_blank">HACKAROTO - Nueva IA China generadora de video</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=GEBKWOO9vNY" target="_blank">ALEJAVI RIVERA - 5 Nuevas IAs GRATIS de Google</a></li>
+                                    <li><a href="https://www.youtube.com/@alejavirivera" target="_blank">Canal de Alejavi Rivera (Especialista en IA)</a></li>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
                 </details>
 
@@ -2887,167 +2904,97 @@ Generar en:
                         </div>
                     </a>
                 </div>
+                 <div class="tool-card-link">
+                    <a href="https://notebooklm.google/" target="_blank">
+                        <div class="tool-card-content">
+                            <div class="tool-name">NotebookLM</div>
+                            <div class="tool-description">Asistente de investigación y escritura de Google para sintetizar información de tus propios documentos.</div>
+                        </div>
+                    </a>
+                </div>
+                 <div class="tool-card-link">
+                    <a href="https://gemini.google.com/storybook" target="_blank">
+                        <div class="tool-card-content">
+                            <div class="tool-name">Storybook</div>
+                            <div class="tool-description">Crea libros e historias personalizadas con IA, parte de las herramientas de Gemini.</div>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <!-- IA de Imagen -->
             <h4>IA de Imagen</h4>
             <div class="tools-grid">
-                <div class="tool-card-link">
-                    <a href="https://www.midjourney.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Midjourney</div>
-                            <div class="tool-description">El rey de la calidad artística y la estética cinematográfica. Funciona a través de Discord.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://openai.com/dall-e-3" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">DALL-E 3</div>
-                            <div class="tool-description">Integrado en ChatGPT, excelente para seguir prompts complejos y generar texto dentro de las imágenes.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://stablediffusionweb.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Stable Diffusion</div>
-                            <div class="tool-description">La opción de código abierto, ofrece un control sin precedentes a través de modelos y extensiones.</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- IA de Video -->
-            <h4>IA de Video</h4>
-            <div class="tools-grid">
-                <div class="tool-card-link">
-                    <a href="https://runwayml.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Runway</div>
-                            <div class="tool-description">Líder en generación de video desde texto, imagen o video. Un completo estudio de edición IA.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://pika.art/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Pika</div>
-                            <div class="tool-description">Potente generador de video con excelentes capacidades de animación y control de movimiento.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://www.heygen.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">HeyGen</div>
-                            <div class="tool-description">Crea avatares realistas y videos de clonación de voz para presentaciones y marketing.</div>
-                        </div>
-                    </a>
-                </div>
-                 <div class="tool-card-link">
-                    <a href="https://kaiber.ai/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Kaiber</div>
-                            <div class="tool-description">Transforma tus videos e imágenes en animaciones artísticas y visuales psicodélicas.</div>
-                        </div>
-                    </a>
-                </div>
+                 <div class="tool-card-link"><a href="https://www.midjourney.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Midjourney</div><div class="tool-description">El rey de la calidad artística y la estética cinematográfica.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://openai.com/dall-e-3" target="_blank"><div class="tool-card-content"><div class="tool-name">DALL-E 3</div><div class="tool-description">Integrado en ChatGPT, excelente para seguir prompts complejos.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://stablediffusionweb.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Stable Diffusion</div><div class="tool-description">La opción de código abierto, ofrece un control sin precedentes.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://imgtoimg.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">IMGtoIMG.ai</div><div class="tool-description">Edición y modificación de imágenes a partir de otras imágenes.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://github.com/xinntao/Real-ESRGAN" target="_blank"><div class="tool-card-content"><div class="tool-name">Real-ESRGAN</div><div class="tool-description">Mejora la resolución de imágenes y restaura detalles.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://www.remove.bg/" target="_blank"><div class="tool-card-content"><div class="tool-name">Remove.bg</div><div class="tool-description">Elimina fondos de imágenes de forma automática.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://opal.withgoogle.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Google OPAL</div><div class="tool-description">Herramienta de diseño e imagen experimental de Google.</div></div></a></div>
+                 <div class="tool-card-link"><a href="https://lens.google/" target="_blank"><div class="tool-card-content"><div class="tool-name">Google Lens</div><div class="tool-description">Reconocimiento de objetos y texto con la cámara de tu móvil.</div></div></a></div>
             </div>
             
+            <!-- IA de Video -->
+            <h4>IA de Video y Animación</h4>
+            <div class="tools-grid">
+                <div class="tool-card-link"><a href="https://deepmind.google/technologies/veo/" target="_blank"><div class="tool-card-content"><div class="tool-name">Google VEO</div><div class="tool-description">Modelo de generación de video de alta calidad de Google para crear clips cinematográficos.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://runwayml.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Runway</div><div class="tool-description">Líder en generación de video desde texto, imagen o video. Un completo estudio de edición IA.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://pika.art/" target="_blank"><div class="tool-card-content"><div class="tool-name">Pika</div><div class="tool-description">Potente generador de video con excelentes capacidades de animación y control de movimiento.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://wan.video/" target="_blank"><div class="tool-card-content"><div class="tool-name">Wan 2.2</div><div class="tool-description">Crea videos a partir de una imagen inicial, generando movimiento y narrativa visual.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://labs.google/fx/es/tools/flow/" target="_blank"><div class="tool-card-content"><div class="tool-name">Flow (Google)</div><div class="tool-description">Herramienta experimental para crear videos fluidos a partir de imágenes y prompts.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.heygen.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">HeyGen</div><div class="tool-description">Crea avatares realistas y videos de clonación de voz para presentaciones y marketing.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://kaiber.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">Kaiber</div><div class="tool-description">Transforma tus videos e imágenes en animaciones artísticas y visuales psicodélicas.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://viggle.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">Viggle AI</div><div class="tool-description">Animación de personajes consistentes que pueden imitar movimientos de videos de referencia.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://deepmind.google/technologies/genie/" target="_blank"><div class="tool-card-content"><div class="tool-name">Genie</div><div class="tool-description">Genera mundos 2D interactivos y jugables a partir de una sola imagen.</div></div></a></div>
+            </div>
+
             <!-- IA de Audio y Música -->
             <h4>IA de Audio y Música</h4>
             <div class="tools-grid">
-                <div class="tool-card-link">
-                    <a href="https://suno.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Suno</div>
-                            <div class="tool-description">Crea canciones completas (música y letra) en cualquier género a partir de un simple prompt de texto.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://www.udio.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Udio</div>
-                            <div class="tool-description">Un potente competidor de Suno, conocido por su alta calidad de audio y versatilidad de géneros.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://elevenlabs.io/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">ElevenLabs</div>
-                            <div class="tool-description">El estándar de oro para la síntesis y clonación de voz, con un realismo y control emocional increíbles.</div>
-                        </div>
-                    </a>
-                </div>
+                <div class="tool-card-link"><a href="https://suno.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Suno</div><div class="tool-description">Crea canciones completas (música y letra) en cualquier género a partir de un simple prompt de texto.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.udio.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Udio</div><div class="tool-description">Un potente competidor de Suno, conocido por su alta calidad de audio y versatilidad de géneros.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://elevenlabs.io/" target="_blank"><div class="tool-card-content"><div class="tool-name">ElevenLabs</div><div class="tool-description">El estándar de oro para la síntesis y clonación de voz, con un realismo y control emocional increíbles.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://elevenlabs.io/music" target="_blank"><div class="tool-card-content"><div class="tool-name">ElevenLabs Music</div><div class="tool-description">Generación de música y efectos de sonido de alta calidad desde texto.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.lalal.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">Lalal.ai</div><div class="tool-description">Separa voces e instrumentos de cualquier archivo de audio.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://openai.com/research/whisper" target="_blank"><div class="tool-card-content"><div class="tool-name">Whisper</div><div class="tool-description">Transcripción de audio a texto de alta precisión de OpenAI.</div></div></a></div>
             </div>
 
-            <!-- IA Especializada y de Productividad -->
-            <h4>IA Especializada y de Productividad</h4>
+            <!-- Plataformas de Evaluación y Modelos Destacados -->
+            <h4>Plataformas de Evaluación y Modelos Destacados</h4>
             <div class="tools-grid">
-                <div class="tool-card-link">
-                    <a href="https://www.remove.bg/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Remove.bg</div>
-                            <div class="tool-description">Elimina el fondo de cualquier imagen de forma instantánea y precisa con un solo clic.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://www.deepl.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">DeepL</div>
-                            <div class="tool-description">Considerado el traductor automático con mayor matiz y precisión del mercado.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://otter.ai/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Otter.ai</div>
-                            <div class="tool-description">Transcribe reuniones y entrevistas en tiempo real, identificando hablantes y generando resúmenes.</div>
-                        </div>
-                    </a>
-                </div>
-                 <div class="tool-card-link">
-                    <a href="https://gamma.app/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Gamma</div>
-                            <div class="tool-description">Crea presentaciones, documentos y páginas web pulidas a partir de una simple instrucción de texto.</div>
-                        </div>
-                    </a>
-                </div>
+                <div class="tool-card-link"><a href="https://chat.lmsys.org/" target="_blank"><div class="tool-card-content"><div class="tool-name">LlamaArena.ai</div><div class="tool-description">Plataforma para comparar el rendimiento de diferentes modelos de IA en tiempo real a través de batallas a ciegas.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://openai.com/index/hello-gpt-4o/" target="_blank"><div class="tool-card-content"><div class="tool-name">GPT-4o</div><div class="tool-description">El modelo insignia de OpenAI, conocido por su potente razonamiento y capacidades multimodales.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.anthropic.com/news/claude-3-family" target="_blank"><div class="tool-card-content"><div class="tool-name">Claude 3 Opus</div><div class="tool-description">El modelo más potente de Anthropic, destaca en tareas complejas y análisis de documentos extensos.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://ai.meta.com/blog/meta-llama-3/" target="_blank"><div class="tool-card-content"><div class="tool-name">Llama 3</div><div class="tool-description">El modelo de código abierto de Meta, altamente competitivo y una base para muchas otras IAs.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://cohere.com/command-r-plus" target="_blank"><div class="tool-card-content"><div class="tool-name">Command R+</div><div class="tool-description">Modelo de Cohere optimizado para tareas empresariales y de RAG (Generación Aumentada por Recuperación).</div></div></a></div>
+                <div class="tool-card-link"><a href="https://mistral.ai/news/mistral-large/" target="_blank"><div class="tool-card-content"><div class="tool-name">Mistral Large</div><div class="tool-description">El modelo de gama alta de Mistral AI, conocido por su eficiencia y rendimiento en múltiples idiomas.</div></div></a></div>
+            </div>
+
+            <!-- IA de Productividad y Utilidades -->
+            <h4>IA de Productividad y Utilidades</h4>
+            <div class="tools-grid">
+                <div class="tool-card-link"><a href="https://www.grammarly.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Grammarly</div><div class="tool-description">Asistente de escritura y gramática para mejorar tus textos en tiempo real.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.notion.so/product/ai" target="_blank"><div class="tool-card-content"><div class="tool-name">Notion AI</div><div class="tool-description">IA integrada para organización, resúmenes y creación de contenido dentro de Notion.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://otter.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">Otter.ai</div><div class="tool-description">Transcribe reuniones y entrevistas en tiempo real, identificando hablantes.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://gamma.app/" target="_blank"><div class="tool-card-content"><div class="tool-name">Gamma</div><div class="tool-description">Crea presentaciones y documentos pulidos a partir de una simple instrucción de texto.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://quickdraw.withgoogle.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Quick, Draw!</div><div class="tool-description">Juego de reconocimiento de dibujos para entender cómo "piensa" una IA visual.</div></div></a></div>
             </div>
 
             <!-- Automatización y Desarrollo -->
             <h4>Automatización y Desarrollo</h4>
             <div class="tools-grid">
-                <div class="tool-card-link">
-                    <a href="https://zapier.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Zapier</div>
-                            <div class="tool-description">Conecta tus aplicaciones favoritas (Gmail, Slack, etc.) con modelos de IA para automatizar flujos de trabajo.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://www.make.com/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">Make (Integromat)</div>
-                            <div class="tool-description">Una potente plataforma visual para crear automatizaciones complejas que integren múltiples IAs.</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tool-card-link">
-                    <a href="https://agentgpt.reworkd.ai/" target="_blank">
-                        <div class="tool-card-content">
-                            <div class="tool-name">AgentGPT</div>
-                            <div class="tool-description">Experimenta con agentes de IA autónomos que pueden navegar por la web y ejecutar tareas complejas por sí mismos.</div>
-                        </div>
-                    </a>
-                </div>
+                <div class="tool-card-link"><a href="https://zapier.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Zapier</div><div class="tool-description">Conecta tus aplicaciones favoritas con modelos de IA para automatizar flujos de trabajo.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://www.make.com/" target="_blank"><div class="tool-card-content"><div class="tool-name">Make</div><div class="tool-description">Una potente plataforma visual para crear automatizaciones complejas que integren múltiples IAs.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://bubble.io/" target="_blank"><div class="tool-card-content"><div class="tool-name">Bubble</div><div class="tool-description">Crea aplicaciones web sin código con potentes integraciones de IA.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://playground.tensorflow.org/" target="_blank"><div class="tool-card-content"><div class="tool-name">TensorFlow Playground</div><div class="tool-description">Visualiza el aprendizaje de redes neuronales de forma interactiva.</div></div></a></div>
+                <div class="tool-card-link"><a href="https://agentgpt.reworkd.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">AgentGPT</div><div class="tool-description">Experimenta con agentes de IA autónomos que pueden ejecutar tareas complejas.</div></div></a></div>
+            </div>
+
+            <!-- 3D -->
+            <h4>3D</h4>
+            <div class="tools-grid">
+                <div class="tool-card-link"><a href="https://www.meshy.ai/" target="_blank"><div class="tool-card-content"><div class="tool-name">Meshy</div><div class="tool-description">Crea modelos 3D y texturas a partir de texto o imágenes 2D.</div></div></a></div>
             </div>
         </section>
     </main>
@@ -3060,7 +3007,7 @@ Generar en:
     </footer>
 
     <script>
-        // Acordeón mejorado con animaciones suaves
+        // Acordeón mejorado
         const moduleCards = document.querySelectorAll('.module-card');
         
         moduleCards.forEach(card => {
@@ -3079,6 +3026,23 @@ Generar en:
                     }, 100);
                 }
             });
+        });
+
+        // --- Click en Stats Cards (AÑADIDO) ---
+        document.getElementById('tools-stat-card').addEventListener('click', () => {
+            document.getElementById('tool-index').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('videos-stat-card').addEventListener('click', () => {
+            // Asegurarse de que el módulo 0 esté abierto para que la sección sea visible
+            const module0 = document.querySelector('.module-card'); // El primero es el 0
+            if (!module0.open) {
+                module0.open = true;
+            }
+            // Esperar a que la animación de apertura termine para un scroll más preciso
+            setTimeout(() => {
+                document.getElementById('videos-list-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
         });
 
         // Animación de números en stats
@@ -3106,7 +3070,7 @@ Generar en:
                     const statNumbers = entry.target.querySelectorAll('.stat-number');
                     statNumbers.forEach(stat => {
                         const value = parseInt(stat.textContent);
-                        animateValue(stat, 0, value, 2000); // Duración aumentada a 2000ms
+                        animateValue(stat, 0, value, 2000);
                     });
                     entry.target.animated = true;
                 }
@@ -3118,35 +3082,12 @@ Generar en:
             statsObserver.observe(heroStats);
         }
 
-        // Efecto parallax suave en hero
-        let ticking = false;
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && window.innerWidth > 768) { // Disable on mobile for performance
-                const heroContent = document.querySelector('.hero-content');
-                heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
-                heroContent.style.opacity = 1 - scrolled / (window.innerHeight * 0.7);
-            }
-            ticking = false;
-        }
-
-        function requestTick() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestTick, { passive: true });
-        
         // --- Funcionalidad del botón de copiar ---
         document.querySelectorAll('.copy-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const codeBlock = button.parentElement;
                 const codeToCopy = codeBlock.querySelector('code').innerText;
 
-                // Crear un textarea temporal para copiar el texto
                 const textArea = document.createElement('textarea');
                 textArea.value = codeToCopy;
                 document.body.appendChild(textArea);
@@ -3161,7 +3102,6 @@ Generar en:
                 }
                 document.body.removeChild(textArea);
 
-                // Revertir el texto del botón después de 1.5 segundos
                 setTimeout(() => {
                     button.textContent = 'Copiar';
                     button.classList.remove('copied');
